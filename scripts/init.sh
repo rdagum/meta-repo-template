@@ -27,7 +27,10 @@ owner_a="${owner_a:-architecture@$org.example}"
 
 # Files that carry placeholders. Excludes repos/ (clones), scripts/ (their placeholders are used at
 # run time) and the two scaffold templates filled by new-ticket.sh / new-adr.sh.
-mapfile -t files < <(grep -rl --exclude-dir=repos --exclude-dir=.git --exclude-dir=scripts --exclude='_template.md' --exclude='0000-template.md' '{{[A-Z_]*}}' "$ROOT_DIR")
+# (while-read rather than mapfile: macOS ships Bash 3.2)
+files=()
+while IFS= read -r f; do files+=("$f"); done < <(grep -rl --exclude-dir=repos --exclude-dir=.git --exclude-dir=scripts --exclude='_template.md' --exclude='0000-template.md' '{{[A-Z_]*}}' "$ROOT_DIR")
+[[ ${#files[@]} -gt 0 ]] || die "no placeholders found; was init.sh already run?"
 
 # Portable in-place edit (GNU and BSD sed differ on -i): write to a temp file, then move.
 for f in "${files[@]}"; do
