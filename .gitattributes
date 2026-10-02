@@ -1,0 +1,7 @@
+# Scripts must stay LF or Bash fails on Windows checkouts with autocrlf=true
+* text=auto
+*.sh text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+CODEOWNERS text eol=lf
+.editorconfig text eol=lf

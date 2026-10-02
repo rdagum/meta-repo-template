@@ -1,0 +1,25 @@
+{
+  "$schema": "./scripts/repos.schema.json",
+  "product": "{{PRODUCT_NAME}}",
+  "org": "{{ORG}}",
+  "project": "{{PROJECT}}",
+  "cloneRoot": "repos",
+  "repos": [
+    {
+      "name": "example-web",
+      "url": "git@ssh.dev.azure.com:v3/{{ORG}}/{{PROJECT}}/example-web",
+      "defaultBranch": "main",
+      "tags": ["frontend", "web", "typescript"],
+      "description": "Customer-facing web app. Replace or delete this entry.",
+      "guide": "docs/agent-guides/example-web.md"
+    },
+    {
+      "name": "example-api",
+      "url": "git@ssh.dev.azure.com:v3/{{ORG}}/{{PROJECT}}/example-api",
+      "defaultBranch": "main",
+      "tags": ["backend", "api", "dotnet"],
+      "description": "Public API and core domain logic. Replace or delete this entry.",
+      "guide": "docs/agent-guides/example-api.md"
+    }
+  ]
+}

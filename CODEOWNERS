@@ -1,0 +1,16 @@
+# Workspace contract: changes to these paths need review from the named owners.
+#
+# Azure Repos does not enforce this file. It is the human- and agent-readable source of truth for
+# ownership. Enforce it with a branch policy on main: "Automatically included reviewers" per path,
+# plus a minimum reviewer count. Keep the two in sync.
+#
+# Replace the placeholders with real users (email) or Azure DevOps groups.
+
+/CLAUDE.md                 {{OWNER_PLATFORM}}
+/AGENTS.md                 {{OWNER_PLATFORM}}
+/repos.json                {{OWNER_PLATFORM}}
+/CODEOWNERS                {{OWNER_PLATFORM}}
+/.claude/                  {{OWNER_PLATFORM}}
+/scripts/                  {{OWNER_PLATFORM}}
+/docs/adr/                 {{OWNER_PLATFORM}} {{OWNER_ARCHITECTURE}}
+/docs/agent-guides/        {{OWNER_PLATFORM}}

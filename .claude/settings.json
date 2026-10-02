@@ -1,0 +1,35 @@
+{
+  "$comment": "Permission boundaries for Claude Code in this workspace. Deny rules win over allow rules. Per-developer overrides go in settings.local.json (git-ignored).",
+  "permissions": {
+    "allow": [
+      "Bash(./scripts/sync.sh:*)",
+      "Bash(./scripts/status.sh:*)",
+      "Bash(./scripts/new-ticket.sh:*)",
+      "Bash(./scripts/new-adr.sh:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git branch:*)"
+    ],
+    "deny": [
+      "Read(./**/.env)",
+      "Read(./**/.env.*)",
+      "Read(./**/*.pem)",
+      "Read(./**/*.key)",
+      "Read(./**/*.pfx)",
+      "Read(./**/secrets/**)",
+      "Read(~/.ssh/**)",
+      "Read(~/.azure/**)",
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(az pipelines run:*)",
+      "Bash(az pipelines release:*)",
+      "Bash(terraform apply:*)",
+      "Bash(terraform destroy:*)",
+      "Bash(ansible-playbook:*)",
+      "Bash(kubectl apply:*)",
+      "Bash(kubectl delete:*)",
+      "Bash(docker push:*)"
+    ]
+  }
+}

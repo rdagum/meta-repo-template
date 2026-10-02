@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Meta repo manifest",
+  "type": "object",
+  "required": ["repos"],
+  "properties": {
+    "product": { "type": "string" },
+    "org": { "type": "string", "description": "Azure DevOps organisation" },
+    "project": { "type": "string", "description": "Azure DevOps project" },
+    "cloneRoot": { "type": "string", "default": "repos" },
+    "repos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "url"],
+        "additionalProperties": false,
+        "properties": {
+          "name": { "type": "string", "description": "Directory name under cloneRoot" },
+          "url": { "type": "string", "description": "Clone URL (SSH or HTTPS)" },
+          "defaultBranch": { "type": "string", "default": "main" },
+          "tags": { "type": "array", "items": { "type": "string" } },
+          "description": { "type": "string" },
+          "guide": { "type": "string", "description": "Path to this repo's Tier 3 agent guide" }
+        }
+      }
+    }
+  }
+}

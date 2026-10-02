@@ -1,0 +1,19 @@
+# Product repos are cloned here; they are never part of this repo
+repos/*
+!repos/.gitkeep
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local, per-developer agent settings
+.claude/settings.local.json
